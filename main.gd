@@ -1,6 +1,6 @@
 extends Control
 
-var entry = preload("res://entry.tscn")
+var entry = preload("res://components/journal_entry.tscn")
 var account_titles = []
 
 func _ready() -> void:

@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cythmxql425um"]
+
+[node name="Ledger" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 72.0
+offset_bottom = 87.0
+text = "Date"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+offset_left = 26.0
+offset_top = 19.0
+offset_right = 148.0
+offset_bottom = 42.0
+text = "ACCOUNT TITLE"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 65.0
+offset_right = 189.0
+offset_bottom = 88.0
+text = "Description"
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 211.0
+offset_top = 66.0
+offset_right = 263.0
+offset_bottom = 89.0
+text = "Debit"
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 297.0
+offset_top = 66.0
+offset_right = 347.0
+offset_bottom = 89.0
+text = "Credit"
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 68.0
+offset_right = 442.0
+offset_bottom = 91.0
+text = "Balance"

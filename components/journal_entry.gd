@@ -19,6 +19,7 @@ func check_value(_value):
 	
 func request_information():
 	var info = {
+		"date" : $Date.text,
 		"credit_title" : $CreditAccTitle.text,
 		"debit_title" : $DebitAccTitle.text,
 		

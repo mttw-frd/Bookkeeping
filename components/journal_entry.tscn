@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8pycolfxviyw"]
 
-[ext_resource type="Script" uid="uid://c0ifkncgx84xk" path="res://entry.gd" id="1_rixl5"]
+[ext_resource type="Script" uid="uid://c0ifkncgx84xk" path="res://components/journal_entry.gd" id="1_2rr5n"]
 
-[node name="Entry" type="Panel"]
+[node name="JournalEntry" type="Panel"]
 custom_minimum_size = Vector2(511, 151)
 anchors_preset = -1
 anchor_right = 0.44400004
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_rixl5")
+script = ExtResource("1_2rr5n")
 
 [node name="CreditAccTitle" type="LineEdit" parent="."]
 layout_mode = 1
@@ -101,7 +101,7 @@ grow_horizontal = 0
 grow_vertical = 2
 placeholder_text = "Debit Value"
 
-[node name="LineEdit" type="LineEdit" parent="."]
+[node name="Date" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
