@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvmhcy25s566m"]
+
+[ext_resource type="Script" uid="uid://dbin7wvan6ixs" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c8pycolfxviyw" path="res://entry.tscn" id="1_ig7tw"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_0xm2m")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AddEntry" type="Button" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 52.0
+offset_right = 123.0
+offset_bottom = 83.0
+text = "Add Entry"
+
+[node name="JournalScroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 88.0
+offset_right = 772.0
+offset_bottom = 600.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="JournalScroll"]
+layout_mode = 2
+
+[node name="Entry" parent="JournalScroll/VBoxContainer" instance=ExtResource("1_ig7tw")]
+layout_mode = 2
+
+[node name="JournalLabel" type="Label" parent="."]
+layout_mode = 1
+offset_left = 227.0
+offset_top = 8.0
+offset_right = 341.0
+offset_bottom = 31.0
+text = "Journal Entries"
+
+[node name="Collect" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.5
+offset_top = 54.0
+offset_right = -28.5
+offset_bottom = 85.0
+grow_horizontal = 2
+text = "Collect"

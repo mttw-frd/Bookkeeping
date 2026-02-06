@@ -1,0 +1,206 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8pycolfxviyw"]
+
+[ext_resource type="Script" uid="uid://c0ifkncgx84xk" path="res://entry.gd" id="1_rixl5"]
+
+[node name="Entry" type="Panel"]
+custom_minimum_size = Vector2(511, 151)
+anchors_preset = -1
+anchor_right = 0.44400004
+anchor_bottom = 0.23300001
+offset_right = -0.4880371
+offset_bottom = 0.015991211
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_rixl5")
+
+[node name="CreditAccTitle" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 132.0
+offset_top = 21.0
+offset_right = 249.0
+offset_bottom = 57.5
+grow_vertical = 2
+placeholder_text = "Account Title"
+
+[node name="DebitAccTitle" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 92.0
+offset_top = -26.0
+offset_right = 207.0
+offset_bottom = 10.0
+grow_vertical = 2
+placeholder_text = "Account Title"
+
+[node name="Remove" type="Button" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 1.0
+offset_right = 74.0
+offset_bottom = 32.0
+text = "Remove"
+
+[node name="Credit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 44.0
+offset_top = 7.0
+offset_right = 90.0
+offset_bottom = 30.0
+grow_horizontal = 2
+text = "DEBIT"
+
+[node name="Debit" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 138.0
+offset_top = 7.0
+offset_right = 194.0
+offset_bottom = 30.0
+grow_horizontal = 2
+text = "CREDIT"
+
+[node name="CreditValue" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 22.5
+offset_right = -34.0
+offset_bottom = 53.5
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "Credit Value"
+
+[node name="DebitValue" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -232.5625
+offset_top = -21.5
+offset_right = -130.0
+offset_bottom = 9.5
+grow_horizontal = 0
+grow_vertical = 2
+placeholder_text = "Debit Value"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 15.0
+offset_top = -23.5
+offset_right = 83.5625
+offset_bottom = 7.5
+grow_vertical = 2
+placeholder_text = "Date"
+
+[node name="OptionButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -25.0
+offset_top = 2.0
+offset_right = -3.0
+offset_bottom = 33.0
+grow_horizontal = 0
+text = "..."
+
+[node name="Options" type="Panel" parent="OptionButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = -18.5
+offset_right = 222.0
+offset_bottom = 133.5
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="OptionsLabel" type="Label" parent="OptionButton/Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "Options"
+
+[node name="VatCheck" type="CheckBox" parent="OptionButton/Options"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 59.0
+offset_top = 56.0
+offset_right = 83.0
+offset_bottom = 80.0
+
+[node name="Vat" type="Label" parent="OptionButton/Options/VatCheck"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -11.5
+offset_right = -24.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Vat?"
+
+[node name="DiscCheck" type="CheckBox" parent="OptionButton/Options"]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 90.0
+offset_right = 117.0
+offset_bottom = 114.0
+
+[node name="Discount" type="Label" parent="OptionButton/Options/DiscCheck"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -11.5
+offset_right = -26.0
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "Discount?"
+
+[node name="LineEdit" type="LineEdit" parent="OptionButton/Options/DiscCheck"]
+layout_mode = 0
+offset_left = 30.0
+offset_right = 98.5625
+offset_bottom = 31.0
+placeholder_text = "%"
+
+[connection signal="pressed" from="OptionButton" to="." method="_on_option_button_pressed"]
