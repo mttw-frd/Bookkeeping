@@ -13,13 +13,10 @@ func add_entry():
 
 func to_ledger(entries):
 	
-	if $Ledger/ScrollContainer/VBoxContainer.get_child_count() == 0:
-		pass
-	else:
-		var all_ledger = $Ledger/ScrollContainer/VBoxContainer.get_children()
-		for ledger in all_ledger:
-			$Ledger/ScrollContainer/VBoxContainer.remove_child(ledger)
-			
+	var all_ledger = $Ledger/ScrollContainer/VBoxContainer.get_children()
+	for ledger in all_ledger:
+		$Ledger/ScrollContainer/VBoxContainer.remove_child(ledger)
+	
 	for ent in entries:
 		#print("TEST: ", ent.debit_title)
 		if !GLOBAL.account_titles.has(ent.debit_title.to_upper()):
@@ -36,8 +33,8 @@ func to_ledger(entries):
 		var new_entry = ledger_entry.instantiate()
 		new_entry.change_title(title)
 		$Ledger/ScrollContainer/VBoxContainer.add_child(new_entry)
-		
-	print(GLOBAL.account_titles)
+			
+	#print(GLOBAL.account_titles)
 
 func collect_info():
 	var entries = $Journal/JournalScroll/VBoxContainer.get_children()
@@ -45,7 +42,9 @@ func collect_info():
 	for current_entry in entries:
 		#print(current_entry.request_information())
 		all_entries.append(current_entry.request_information())
-	#print(all_entries)
-	to_ledger(all_entries)
+		
 	GLOBAL.journal_entries = all_entries
+	#print("GLOBAL THING:")
+	#print(GLOBAL.journal_entries)
+	to_ledger(all_entries)
 	return all_entries

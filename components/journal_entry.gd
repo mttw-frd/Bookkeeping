@@ -16,7 +16,8 @@ func check_value(_value):
 		return
 	else:
 		print("Credit and Debit are not Balanced")
-	
+
+
 func request_information():
 	var info = {
 		"date" : $Date.text,
@@ -30,7 +31,6 @@ func request_information():
 
 func _on_option_button_pressed() -> void:
 	$OptionButton/Options.visible = !$OptionButton/Options.visible
-	pass # Replace with function body.
 
 func apply_vat(_toggled: bool):
 	print("VAT TEST")
