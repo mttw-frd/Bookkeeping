@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://de0dnsgsbkhd2"]
+[gd_scene load_steps=2 format=3 uid="uid://de0dnsgsbkhd2"]
+
+[ext_resource type="Script" uid="uid://db018jsvauclf" path="res://components/ledger_entry.gd" id="1_45rf2"]
 
 [node name="LedgerEntry" type="Panel"]
 custom_minimum_size = Vector2(800, 67)
@@ -9,8 +11,9 @@ offset_right = -352.0
 offset_bottom = -581.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_45rf2")
 
-[node name="LineEdit" type="Label" parent="."]
+[node name="Date" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -22,7 +25,7 @@ offset_bottom = 15.5
 grow_vertical = 2
 text = "Date"
 
-[node name="LineEdit2" type="LineEdit" parent="."]
+[node name="Desc" type="LineEdit" parent="."]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -34,7 +37,7 @@ offset_bottom = 15.5
 grow_vertical = 2
 placeholder_text = "Description"
 
-[node name="LineEdit3" type="Label" parent="."]
+[node name="Debit" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -46,7 +49,7 @@ offset_bottom = 47.0
 grow_horizontal = 2
 text = "Debit"
 
-[node name="LineEdit4" type="Label" parent="."]
+[node name="Credit" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -58,7 +61,7 @@ offset_bottom = 47.0
 grow_horizontal = 2
 text = "Credit"
 
-[node name="LineEdit5" type="Label" parent="."]
+[node name="Balance" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

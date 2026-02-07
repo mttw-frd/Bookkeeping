@@ -20,8 +20,8 @@ func check_value(_value):
 func request_information():
 	var info = {
 		"date" : $Date.text,
-		"credit_title" : $CreditAccTitle.text,
-		"debit_title" : $DebitAccTitle.text,
+		"credit_title" : $CreditAccTitle.text.to_upper(),
+		"debit_title" : $DebitAccTitle.text.to_upper(),
 		
 		"credit_value" : $CreditValue.text,
 		"debit_value" : $DebitValue.text
@@ -36,8 +36,7 @@ func apply_vat(_toggled: bool):
 	print("VAT TEST")
 	print(int($DebitValue.text) / 1.12)
 	var vat_exclusive = int($DebitValue.text) / 1.12
-	var vat_value = int($DebitValue.text) - vat_exclusive
+	var vat_value = int($DebitValue.text) - snapped(vat_exclusive, 0.01)
 	
-	$DebitValue.text = str(vat_exclusive)
-	print(vat_value)
+	$DebitValue.text = str(snapped(vat_exclusive, 0.01))
 	print(snapped(vat_value, 0.01))

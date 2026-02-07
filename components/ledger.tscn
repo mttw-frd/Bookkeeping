@@ -1,6 +1,5 @@
-[gd_scene load_steps=3 format=3 uid="uid://cythmxql425um"]
+[gd_scene load_steps=2 format=3 uid="uid://cythmxql425um"]
 
-[ext_resource type="PackedScene" uid="uid://de0dnsgsbkhd2" path="res://components/ledger_entry.tscn" id="1_7f1l8"]
 [ext_resource type="Script" uid="uid://c8ykremwsqhuo" path="res://components/ledger.gd" id="1_8ac8y"]
 
 [node name="Ledger" type="Panel"]
@@ -62,21 +61,12 @@ offset_right = 811.0
 offset_bottom = 91.0
 text = "Balance"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="."]
+[node name="Scroll" type="ScrollContainer" parent="."]
 layout_mode = 0
 offset_left = 33.0
 offset_top = 96.0
 offset_right = 837.0
 offset_bottom = 618.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
-layout_mode = 2
-
-[node name="LedgerEntry" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_7f1l8")]
-layout_mode = 2
-
-[node name="LedgerEntry2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_7f1l8")]
-layout_mode = 2
-
-[node name="LedgerEntry3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_7f1l8")]
+[node name="VBox" type="VBoxContainer" parent="Scroll"]
 layout_mode = 2

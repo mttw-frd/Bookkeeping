@@ -2,7 +2,6 @@ extends Control
 
 var journal_entry = preload("res://components/journal_entry.tscn")
 var ledger_entry = preload("res://components/ledger.tscn")
-var account_titles = []
 
 func _ready() -> void:
 	$Journal/AddEntry.pressed.connect(add_entry)
@@ -23,21 +22,22 @@ func to_ledger(entries):
 			
 	for ent in entries:
 		#print("TEST: ", ent.debit_title)
-		if !account_titles.has(ent.debit_title.to_upper()):
-			account_titles.append(ent.debit_title.to_upper())
+		if !GLOBAL.account_titles.has(ent.debit_title.to_upper()):
+			GLOBAL.account_titles.append(ent.debit_title.to_upper())
 		elif ent.debit_title == "":
 			pass
 			
-		if !account_titles.has(ent.credit_title.to_upper()):
-			account_titles.append(ent.credit_title.to_upper())
+		if !GLOBAL.account_titles.has(ent.credit_title.to_upper()):
+			GLOBAL.account_titles.append(ent.credit_title.to_upper())
 		elif ent.credit_title == "":
 			pass
 			
-	for title in account_titles:
+	for title in GLOBAL.account_titles:
 		var new_entry = ledger_entry.instantiate()
 		new_entry.change_title(title)
 		$Ledger/ScrollContainer/VBoxContainer.add_child(new_entry)
-	print(account_titles)
+		
+	print(GLOBAL.account_titles)
 
 func collect_info():
 	var entries = $Journal/JournalScroll/VBoxContainer.get_children()
@@ -47,4 +47,5 @@ func collect_info():
 		all_entries.append(current_entry.request_information())
 	#print(all_entries)
 	to_ledger(all_entries)
+	GLOBAL.journal_entries = all_entries
 	return all_entries
