@@ -1,21 +1,28 @@
-[gd_scene format=3 uid="uid://cythmxql425um"]
+[gd_scene load_steps=3 format=3 uid="uid://cythmxql425um"]
+
+[ext_resource type="PackedScene" uid="uid://de0dnsgsbkhd2" path="res://components/ledger_entry.tscn" id="1_7f1l8"]
+[ext_resource type="Script" uid="uid://c8ykremwsqhuo" path="res://components/ledger.gd" id="1_8ac8y"]
 
 [node name="Ledger" type="Panel"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+custom_minimum_size = Vector2(875, 644)
+anchors_preset = -1
+anchor_right = 0.76000005
+anchor_bottom = 0.994
+offset_right = -0.52008057
+offset_bottom = -0.11199951
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8ac8y")
 
-[node name="Label2" type="Label" parent="."]
+[node name="Date" type="Label" parent="."]
 layout_mode = 0
-offset_left = 32.0
-offset_top = 64.0
-offset_right = 72.0
-offset_bottom = 87.0
+offset_left = 40.0
+offset_top = 63.0
+offset_right = 80.0
+offset_bottom = 86.0
 text = "Date"
 
-[node name="Label" type="Label" parent="."]
+[node name="AccTitle" type="Label" parent="."]
 layout_mode = 1
 offset_left = 26.0
 offset_top = 19.0
@@ -23,34 +30,53 @@ offset_right = 148.0
 offset_bottom = 42.0
 text = "ACCOUNT TITLE"
 
-[node name="Label3" type="Label" parent="."]
+[node name="Desc" type="Label" parent="."]
 layout_mode = 0
-offset_left = 100.0
+offset_left = 122.0
 offset_top = 65.0
-offset_right = 189.0
+offset_right = 211.0
 offset_bottom = 88.0
 text = "Description"
 
-[node name="Label4" type="Label" parent="."]
+[node name="Debit" type="Label" parent="."]
 layout_mode = 0
-offset_left = 211.0
-offset_top = 66.0
-offset_right = 263.0
-offset_bottom = 89.0
+offset_left = 539.0
+offset_top = 67.0
+offset_right = 591.0
+offset_bottom = 90.0
 text = "Debit"
 
-[node name="Label5" type="Label" parent="."]
+[node name="Credit" type="Label" parent="."]
 layout_mode = 0
-offset_left = 297.0
+offset_left = 627.0
 offset_top = 66.0
-offset_right = 347.0
+offset_right = 677.0
 offset_bottom = 89.0
 text = "Credit"
 
-[node name="Label6" type="Label" parent="."]
+[node name="Balance" type="Label" parent="."]
 layout_mode = 0
-offset_left = 377.0
+offset_left = 746.0
 offset_top = 68.0
-offset_right = 442.0
+offset_right = 811.0
 offset_bottom = 91.0
 text = "Balance"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 96.0
+offset_right = 837.0
+offset_bottom = 618.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="LedgerEntry" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_7f1l8")]
+layout_mode = 2
+
+[node name="LedgerEntry2" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_7f1l8")]
+layout_mode = 2
+
+[node name="LedgerEntry3" parent="ScrollContainer/VBoxContainer" instance=ExtResource("1_7f1l8")]
+layout_mode = 2

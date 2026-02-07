@@ -2,7 +2,28 @@
 
 [ext_resource type="Script" uid="uid://dbin7wvan6ixs" path="res://main.gd" id="1_0xm2m"]
 
-[node name="Main" type="TabContainer"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -223.0
+offset_top = 3.0
+offset_right = 223.0
+offset_bottom = 26.0
+grow_horizontal = 2
+text = "Bookkeping Aid by mttw-frd !! NOT USED FOR CHEATING !!"
+
+[node name="Tabs" type="TabContainer" parent="."]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -12,11 +33,11 @@ size_flags_horizontal = 4
 current_tab = 0
 script = ExtResource("1_0xm2m")
 
-[node name="Journal" type="Control" parent="."]
+[node name="Journal" type="Control" parent="Tabs"]
 layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="AddEntry" type="Button" parent="Journal"]
+[node name="AddEntry" type="Button" parent="Tabs/Journal"]
 layout_mode = 0
 offset_left = 39.0
 offset_top = 52.0
@@ -24,7 +45,7 @@ offset_right = 123.0
 offset_bottom = 83.0
 text = "Add Entry"
 
-[node name="JournalScroll" type="ScrollContainer" parent="Journal"]
+[node name="JournalScroll" type="ScrollContainer" parent="Tabs/Journal"]
 layout_mode = 0
 offset_left = 38.0
 offset_top = 88.0
@@ -32,10 +53,10 @@ offset_right = 1122.0
 offset_bottom = 600.0
 horizontal_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Journal/JournalScroll"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Tabs/Journal/JournalScroll"]
 layout_mode = 2
 
-[node name="JournalLabel" type="Label" parent="Journal"]
+[node name="JournalLabel" type="Label" parent="Tabs/Journal"]
 layout_mode = 0
 offset_left = 227.0
 offset_top = 8.0
@@ -43,7 +64,7 @@ offset_right = 341.0
 offset_bottom = 31.0
 text = "Journal Entries"
 
-[node name="Collect" type="Button" parent="Journal"]
+[node name="Collect" type="Button" parent="Tabs/Journal"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -55,7 +76,23 @@ offset_bottom = 85.0
 grow_horizontal = 2
 text = "Compute"
 
-[node name="Ledger" type="Control" parent="."]
+[node name="Ledger" type="Control" parent="Tabs"]
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Tabs/Ledger"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029000001
+anchor_top = 0.068
+anchor_right = 0.54800004
+anchor_bottom = 0.943
+offset_left = 8.591999
+offset_top = 0.04399872
+offset_right = 286.70398
+offset_bottom = 27.169006
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tabs/Ledger/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
