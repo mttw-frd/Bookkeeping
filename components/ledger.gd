@@ -9,6 +9,20 @@ func change_title(title):
 
 func compute_entry():
 	var all_entries = $Scroll/VBox.get_children()
+	var old_balance = 0
+	for i in all_entries.size():
+		var entry_info = all_entries[i].get_info()
+		print(entry_info)
+		#old_balance = int(all_entries[i].get_balance())
+		
+		if entry_info.IsDebit:
+			old_balance = old_balance + float(entry_info.debit_value)
+		else:
+			old_balance = old_balance + (float(entry_info.credit_value) * -1)
+			
+		all_entries[i].apply_balance(old_balance)
+		
+		
 
 func _enter_tree() -> void:
 	for entries in GLOBAL.journal_entries:

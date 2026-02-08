@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var IsDebit = false
+var IsDebit = false
 
 func apply_debit(entry):
 	#print("Debitted")
@@ -20,8 +20,9 @@ func apply_credit(entry):
 func get_info():
 	var info = {
 		"date" : $Date.text,
+		"IsDebit" : IsDebit,
 		"debit_value" : $Debit.text,
-		"credit_value" : $Credit.text,
+		"credit_value" : $Credit.text
 	}
 	return info
 

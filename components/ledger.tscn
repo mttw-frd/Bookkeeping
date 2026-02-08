@@ -12,7 +12,6 @@ offset_bottom = -0.11199951
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8ac8y")
-Ledger_Title = null
 
 [node name="Date" type="Label" parent="."]
 layout_mode = 0
